@@ -40,3 +40,18 @@ out2 <- STSOM(dat2$U, dat2$delta, dat2$Y, dat2$X, dat2$G, dat2$W)
 print(out2)
 ```
 
+
+## Citation
+
+If you use the **STSOM** package in your research, please cite:
+
+Liu, M., Su, Y.R., Liu, Y., Hsu, L. and He, Q., 2024. Structured testing of genetic association with mixed clinical outcomes. Genetic Epidemiology.
+
+
+## License
+
+This package is licensed under the LGPL-2.0 License. See the [LICENSE](LICENSE) file for details.
+
+## Authors
+
+- **Meiling Liu** - [mliu@fredhutch.org](mailto:mliu@fredhutch.org)
