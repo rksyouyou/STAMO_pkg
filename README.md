@@ -57,8 +57,8 @@ Both `dat1` and `dat2` are lists containing six components, each representing di
 - **`delta`**: A numeric vector indicating censoring status (1 = event occurred, 0 = censored).
 - **`Y`**: A numeric vector representing the ancillary variable. `Y` is **binary** in `dat1` and **continuous** in `dat2`. 
 - **`X`**: A numeric matrix of covariates for each subject (excluding the intercept).
-- **`G`**: A numeric matrix of genetic variants for each subject.
-- **`W`**: A numeric matrix of variant annotations providing additional features related to the genetic variants.
+- **`G`**: A numeric matrix of genetic variants for each subject. Each row represents an individual, each column represents a genetic variant.
+- **`W`**: A numeric matrix of variant annotations providing additional features related to the genetic variants. 
 
 These datasets are designed for survival analysis and demonstrate different types of ancillary variables (`Y`), making them useful for evaluating methods that incorporate both binary and continuous variables in genetic association studies.
 
