@@ -25,8 +25,21 @@ install.packages("path/to/STAMO_0.1.0.tar.gz", repos = NULL, type = "source")
 ### Example 1: Score Test for Association Between Somatic Mutations and Multivariate Outcomes
 
 ```{r}
+library(STAMO)
+
 # Load the example dataset
 data("STAMO.data")
+
+# visualize the datasets
+str(dat1)
+List of 6
+ $ U    : num [1:500] 0.2718 0.053 0.0752 0.1733 0.9611 ...
+ $ delta: num [1:500] 0 1 1 1 0 1 1 0 1 0 ...
+ $ Y    : num [1:500] 1 0 0 0 0 1 0 1 0 1 ...
+ $ X    : num [1:500, 1:2] 1 1 0 1 1 1 0 0 1 1 ...
+ $ G    : int [1:500, 1:15] 0 0 0 0 0 0 0 1 0 0 ...
+ $ W    : num [1:2, 1:15] 1 1 1 1 1 0 1 1 1 0 ...
+
 
 # Perform the STAMO test on the first dataset
 out1 <- STAMO(dat1$U, dat1$delta, dat1$Y, dat1$X, dat1$G, dat1$W)
