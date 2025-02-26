@@ -78,14 +78,18 @@ The results from the STAMO test indicate a statistically significant association
 
 The overall **pval** of **2.464553e-07**, obtained by combining `pval.fix` and `pval.rand` using **Fisher’s procedure**, further strengthens the evidence of a robust association between somatic mutations and clinical outcomes. These results suggest that the genetic variants analyzed in this study may play a significant role in influencing survival and other related clinical factors, warranting further investigation into their biological relevance.
 
+The STAMO test was performed on the first dataset (`dat1`), which includes survival outcomes and a continuous ancillary variable.
+
 ```{r}
-# Perform the STAMO test on the second dataset: survival & continuous ancillary outcomes
+# Perform the STAMO test on the second dataset
 out2 <- STAMO(dat2$U, dat2$delta, dat2$Y, dat2$X, dat2$G, dat2$W)
 
 print(out2)
  pval.fix  pval.rand       pval
 0.02044900 0.43378911 0.05078407
 ```
+
+The STAMO test results for the second dataset (`dat2`), which includes survival outcomes and a **continuous ancillary variable**, suggest a moderate association between genetic variants and clinical outcomes. The **pval.fix** value of **0.02044900** indicates a statistically significant association under the **fixed effect assumption**, suggesting that the genetic variant has a consistent impact across all subjects. However, the **pval.rand** value of **0.43378911** is not statistically significant, implying that when allowing for **random effects**, where the variant effect varies between subjects, the association is weak or absent. The overall **pval** of **0.05078407**, which combines `pval.fix` and `pval.rand` using **Fisher’s procedure**, is **borderline significant**, hovering around the conventional 0.05 threshold. This suggests that the genetic variant may have a weak but potentially meaningful association with the multivariate clinical outcomes. The discrepancy between `pval.fix` and `pval.rand` implies that the effect of the genetic variant is likely **more uniform across subjects** rather than highly variable. Given the borderline significance of the overall p-value, further validation through additional studies is needed to determine the biological relevance of this association.
 
 
 ## Citation
