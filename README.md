@@ -12,17 +12,13 @@ The STAMO has been implemented into the **STAMO** package. This package provides
 - Handles both continuous and binary ancillary outcomes.
 - Incorporates both fixed and random variant effects using genetic variant data.
 
-## Installation
+## Installing the STAMO Package
 
-You can install the development version of **STAMO** from GitHub using the following commands:
+You can install the **STAMO** package by downloading the `STAMO_0.1.0.tar.gz` file to your local system. Once downloaded, install it from your local file path using the following command in R:
 
-```{r}
-# Install devtools if necessary
-install.packages("devtools")
+```r
+install.packages("path/to/STAMO_0.1.0.tar.gz", repos = NULL, type = "source")
 
-# Install STAMO from GitHub
-devtools::install_github("rksyouyou/STAMO")
-```
 
 ## Usage 
 
