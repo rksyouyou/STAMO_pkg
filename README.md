@@ -40,6 +40,31 @@ List of 6
  $ G    : int [1:500, 1:15] 0 0 0 0 0 0 0 1 0 0 ...
  $ W    : num [1:2, 1:15] 1 1 1 1 1 0 1 1 1 0 ...
 
+str(dat2)
+List of 6
+  $ U    : num [1:500] 0.2713 0.0608 0.0752 0.3615 0.9611 ...
+  $ delta: num [1:500] 1 1 1 1 0 1 1 0 1 0 ...
+  $ Y    : num [1:500] 1.514 -0.491 -1.638 -1.066 -0.364 ...
+  $ X    : num [1:500, 1:2] 1 1 0 1 1 1 0 0 1 1 ...
+  $ G    : int [1:500, 1:15] 0 0 0 0 0 0 0 1 0 0 ...
+  $ W    : num [1:2, 1:15] 1 1 1 1 1 0 1 1 1 0 ...
+```
+#### Structure of `dat1` and `dat2`
+
+Both `dat1` and `dat2` are lists containing six components, each representing different aspects of the dataset:
+
+- **`U`**: A numeric vector of censored failure times for each subject.
+- **`delta`**: A numeric vector indicating censoring status (1 = event occurred, 0 = censored).
+- **`Y`**: A numeric vector representing the ancillary variable.  
+  - In `dat1`, `Y` is **binary**.  
+  - In `dat2`, `Y` is **continuous**.
+- **`X`**: A numeric matrix of covariates for each subject (excluding the intercept).
+- **`G`**: A numeric matrix of genetic variants for each subject.
+- **`W`**: A numeric matrix of variant annotations providing additional features related to the genetic variants.
+
+These datasets are designed for survival analysis and demonstrate different types of ancillary variables (`Y`), making them useful for evaluating methods that incorporate both binary and continuous variables in genetic association studies.
+
+```{r}
 
 # Perform the STAMO test on the first dataset
 out1 <- STAMO(dat1$U, dat1$delta, dat1$Y, dat1$X, dat1$G, dat1$W)
