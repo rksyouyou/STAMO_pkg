@@ -21,7 +21,7 @@ You can install the development version of **STAMO** from GitHub using the follo
 install.packages("devtools")
 
 # Install STAMO from GitHub
-devtools::install_github("yourusername/STAMO")
+devtools::install_github("rksyouyou/STAMO")
 ```
 
 ## Usage 
