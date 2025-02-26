@@ -4,6 +4,8 @@
 
 ## Overview
 
+Genetic factors play a crucial role in disease development, but their low frequencies make it challenging to analyze individual variants. Additionally, clinical outcomes are complex, encompassing survival time and other binary or continuous outcomes such as recurrences and lymph node count, and how to effectively analyze genetic association with these outcomes remains unclear.  To address these challenges, we propose a structured test statistic that integrates known biological information of genetic variants while allowing for heterogeneous effects. This approach enables a more powerful and comprehensive analysis of genetic associations with mixed survival, binary, and continuous outcomes. Simulation studies demonstrate that our method maintains the correct type I error rate and is highly effective in identifying significant genetic variants [https://onlinelibrary.wiley.com/doi/10.1002/gepi.22560](https://onlinelibrary.wiley.com/doi/10.1002/gepi.22560).
+
 The **STSOM** package provides a score-based test for evaluating the association between somatic mutations and multivariate clinical outcomes, such as survival time and ancillary variables (continuous or binary). This package is especially useful for researchers conducting survival analysis and genetic association studies where both fixed and random variant effects are taken into account.
 
 ### Features:
