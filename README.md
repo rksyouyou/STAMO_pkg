@@ -62,15 +62,29 @@ Both `dat1` and `dat2` are lists containing six components, each representing di
 
 These datasets are designed for survival analysis and demonstrate different types of ancillary variables (`Y`), making them useful for evaluating methods that incorporate both binary and continuous variables in genetic association studies.
 
-```{r}
+The STAMO test was performed on the first dataset (`dat1`), which includes survival outcomes and a binary ancillary variable.
 
+```{r}
 # Perform the STAMO test on the first dataset
 out1 <- STAMO(dat1$U, dat1$delta, dat1$Y, dat1$X, dat1$G, dat1$W)
-print(out1)
 
-# Perform the STAMO test on the second dataset
+print(out1)
+    pval.fix    pval.rand         pval
+ 1.915389e-05 6.712318e-04 2.464553e-07
+```
+
+
+The results from the STAMO test indicate a statistically significant association between the genetic variants and the multivariate clinical outcomes. The **pval.fix** value of **1.915389e-05** suggests that, under the assumption of a **fixed effect** (where the genetic variant has a consistent impact across all subjects), the association is highly significant. Similarly, the **pval.rand** value of **6.712318e-04** indicates that when allowing for **random effects** (where the variant effect varies across subjects), the association remains statistically meaningful. 
+
+The overall **pval** of **2.464553e-07**, obtained by combining `pval.fix` and `pval.rand` using **Fisher’s procedure**, further strengthens the evidence of a robust association between somatic mutations and clinical outcomes. These results suggest that the genetic variants analyzed in this study may play a significant role in influencing survival and other related clinical factors, warranting further investigation into their biological relevance.
+
+```{r}
+# Perform the STAMO test on the second dataset: survival & continuous ancillary outcomes
 out2 <- STAMO(dat2$U, dat2$delta, dat2$Y, dat2$X, dat2$G, dat2$W)
+
 print(out2)
+ pval.fix  pval.rand       pval
+0.02044900 0.43378911 0.05078407
 ```
 
 
