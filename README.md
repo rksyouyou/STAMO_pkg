@@ -55,9 +55,7 @@ Both `dat1` and `dat2` are lists containing six components, each representing di
 
 - **`U`**: A numeric vector of censored failure times for each subject.
 - **`delta`**: A numeric vector indicating censoring status (1 = event occurred, 0 = censored).
-- **`Y`**: A numeric vector representing the ancillary variable.  
-  - In `dat1`, `Y` is **binary**.  
-  - In `dat2`, `Y` is **continuous**.
+- **`Y`**: A numeric vector representing the ancillary variable. `Y` is **binary** in `dat1` and **continuous** in `dat2`. 
 - **`X`**: A numeric matrix of covariates for each subject (excluding the intercept).
 - **`G`**: A numeric matrix of genetic variants for each subject.
 - **`W`**: A numeric matrix of variant annotations providing additional features related to the genetic variants.
